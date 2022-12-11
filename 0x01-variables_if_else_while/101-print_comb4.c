@@ -18,7 +18,7 @@ int main(void)
 			{
 				if (!((ones == tens) || (tens == hundreds) || (tens > ones) || (hundreds > tens)))
 				{
-					putchar(huundreds);
+					putchar(hundreds);
 					putchar(tens);
 					putchar(ones);
 
