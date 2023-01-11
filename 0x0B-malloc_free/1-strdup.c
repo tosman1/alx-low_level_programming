@@ -1,30 +1,31 @@
-#include "holberton.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
 
 /**
- * _strdup - allocates space in memory
- * @str: input string
- *
- * Return: returns a pointer to a newly
- * allocated space in memory
+ * _strdup - duplicate to new memory space location
+ * @str: char
+ * Return: 0
  */
-
 char *_strdup(char *str)
 {
-	char *duplicate_num;
-	int i = 0, len = 0;
+	char *aaa;
+	int i, r = 0;
 
-	duplicate_num = malloc(sizeof(char) * (len + 1));
-	if (str == 0 || duplicate_num == NULL)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
-	for (i = 0; str[i]; i++)
-	{
-		duplicate_num[i] = str[i];
-		len++;
-	}
-	duplicate_num[len] = '\0';
-	return (duplicate_num);
+	i = 0;
+
+	while (str[i] != '\0')
+		i++;
+
+	aaa = malloc(sizeof(char) * (i + 1));
+
+	if (aaa == NULL)
+		return (NULL);
+
+	for (r = 0; str[r]; r++)
+		aaa[r] = str[r];
+
+	return (aaa);
 }
