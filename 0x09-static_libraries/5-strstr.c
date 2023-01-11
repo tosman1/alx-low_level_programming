@@ -1,26 +1,37 @@
-#include "main.h"
+#include "holberton.h"
+#include <stdio.h>
+
 /**
- * _strstr - Entry point
- * @haystack: input
- * @needle: input
- * Return: Always 0 (Success)
+ * _strstr - locate string
+ * @haystack: input string
+ * @needle: input needles
+ *
+ * Description: locates a substring
+ * Return: returns a pointer to the
+ * beginning of the located substring, else, NULL
  */
+
 char *_strstr(char *haystack, char *needle)
 {
-	for (; *haystack != '\0'; haystack++)
+	char *first, *compare;
+
+	while (*haystack)
 	{
-		char *l = haystack;
-		char *p = needle;
-
-		while (*l == *p && *p != '\0')
+		first = haystack;
+		compare = needle;
+		while (*haystack && *compare && *haystack == *compare)
 		{
-			l++;
-			p++;
+			haystack++;
+			compare++;
 		}
-
-		if (*p == '\0')
-			return (haystack);
+		if (!*compare)
+		{
+			return (first);
+		}
+		else
+		{
+			haystack = first + 1;
+		}
 	}
-
-	return (0);
+	return (NULL);
 }

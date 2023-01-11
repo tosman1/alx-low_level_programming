@@ -1,18 +1,21 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- * _strlen - returns the length of a string
- * @s: string
- * Return: length
+ * _strlen - returns lenght of string
+ * @s: input parameter
+ *
+ * Description: uses pointers
+ * Return: Alawy (0)
  */
+
 int _strlen(char *s)
 {
-	int longi = 0;
+	int i;
 
-	while (*s != '\0')
+	for (i = 0; s[i] != '\0'; ++i)
 	{
-		longi++;
-		s++;
+		continue;
 	}
 
-	return (longi);
+	return (i);
 }

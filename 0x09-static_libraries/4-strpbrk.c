@@ -1,23 +1,45 @@
-#include "main.h"
+#include "holberton.h"
+#include <stdio.h>
+
 /**
- * _strpbrk - Entry point
- * @s: input
- * @accept: input
- * Return: Always 0 (Success)
+ * _strpbrk - search a string
+ * @s: input string
+ * @accept: accepted string
+ *
+ * Description: searches a string for any of a set of bytes
+ * Return: resturns accepted string
  */
+
 char *_strpbrk(char *s, char *accept)
 {
-	int k;
+	int i, j, len, exist = 0;
 
-	while (*s)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (k = 0; accept[k]; k++)
-		{
-		if (*s == accept[k])
-		return (s);
-		}
-	s++;
+		continue;
 	}
-
-	return ('\0');
+	len = i;
+	for (i = 0; accept[i] != '\0'; i++)
+	{
+		for (j = 0; s[j] != '\0'; j++)
+		{
+			if (accept[i] == s[j])
+			{
+				if (j <= len)
+				{
+					len = j;
+					exist = 1;
+				}
+			}
+		}
+	}
+	if (exist == 1)
+	{
+		return (&s[len]);
+	}
+	else
+	{
+		return (NULL);
+	}
+	return (0);
 }
